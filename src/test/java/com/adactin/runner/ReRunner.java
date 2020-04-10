@@ -14,15 +14,19 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src\\test\\java\\com\\adactin\\feature\\Adactin.feature", 
+
+@CucumberOptions(features = "@Report/FailedScenario.txt", 
 						glue = "com\\adactin\\stepdefenition",
-                       plugin = {"pretty","html:report","com.cucumber.listener.ExtentCucumberFormatter:Report/extentReport.html,rerun:Report/FailedScenario.txt"},
+                       plugin = {"com.cucumber.listener.ExtentCucumberFormatter:Report/rerunReport.html",
+                    		   "json:target/cucumber.json",
+                    		   "html:normal.html"
+                       },
                        monochrome = true,
                      //  tags= {"~@Second"},
                        dryRun = false,
                        strict = true)
 
-public class Runner {
+public class ReRunner {
 
 	public static WebDriver driver;
 
@@ -39,3 +43,6 @@ public class Runner {
 	}
 
 }
+
+
+

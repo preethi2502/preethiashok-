@@ -1,5 +1,6 @@
 package com.adactin.stepdefenition;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.adactin.baseclass.BaseclassCucumber;
@@ -181,7 +182,7 @@ public class StepDefenition extends BaseclassCucumber {
 
 	@Then("^User is logged out and is navigated back to login page$")
 	public void user_is_logged_out_and_is_navigated_back_to_login_page() throws Throwable {
-
+    Assert.assertEquals("", "   ");
 	}
 
 }
